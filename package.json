@@ -1,0 +1,42 @@
+{
+  "name": "@swervpaydev/react",
+  "version": "0.0.1",
+  "description": "Official Swervpay Widget for React",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
+  "scripts": {
+    "build": "tsup",
+    "changeset:add": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:release": "pnpm run build && changeset publish",
+    "changeset:beta": "changeset pre enter beta",
+    "changeset:normal": "changeset pre exit"
+  },
+  "files": [
+    "./dist/**"
+  ],
+  "keywords": [
+    "swervpay",
+    "swyftpay",
+    "widget",
+    "react",
+    "collection",
+    "deposit",
+    "payment",
+    "swervpay-react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@types/node": "^20.10.6",
+    "@types/react": "^18.2.46",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
