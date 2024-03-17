@@ -1,2 +1,3 @@
 # Ingore examples folder during build
 /examples
+/example
