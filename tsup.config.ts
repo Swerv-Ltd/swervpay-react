@@ -7,5 +7,6 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   bundle: true,
+  shims: true,
   dts: true,
 });

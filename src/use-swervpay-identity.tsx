@@ -1,16 +1,16 @@
 import useScript from "./script";
 import { useEffect } from "react";
-import { SwervpayCheckoutConfig, SwervpayProps } from "./types";
+import type { SwervpayIdentityConfig, SwervpayProps } from "./types";
 
 declare const window: Window &
   typeof globalThis & {
     Swervpay: SwervpayProps;
   };
 
-const useSwervpayCheckout = (props: SwervpayCheckoutConfig) => {
+export const useSwervpayIdentity = (props: SwervpayIdentityConfig) => {
   const [loaded, error] = useScript();
 
-  const errorMsg = "Swervpay failed to load checkout widget";
+  const errorMsg = "Swervpay failed to load identity widget";
 
   useEffect(() => {
     if (error) throw new Error(errorMsg);
@@ -20,11 +20,9 @@ const useSwervpayCheckout = (props: SwervpayCheckoutConfig) => {
     if (error) throw new Error(errorMsg);
 
     if (loaded) {
-      const checkout = window.Swervpay && window.Swervpay.Checkout(props);
+      const checkout = window.Swervpay && window.Swervpay.Identity(props);
       checkout.setup();
       return checkout.open();
     }
   };
 };
-
-export default useSwervpayCheckout;
