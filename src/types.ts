@@ -20,15 +20,23 @@ export type EventResponse = {
   data: Object;
 };
 
-export type Callback = (response: EventResponse) => void;
+export type ValueChanged = (response: EventResponse) => void;
+export type VoidCallback = () => void;
 
 export interface SwervpayCheckoutConfig
   extends Record<
     string,
-    string | number | MetaProps | Callback | boolean | undefined
+    | string
+    | number
+    | MetaProps
+    | VoidCallback
+    | ValueChanged
+    | boolean
+    | undefined
   > {
   key?: string;
   checkoutId?: string;
+  scope?: "deposit" | "collection" | "payment";
   data?: {
     amount: string | number;
     meta?: MetaProps;
@@ -36,21 +44,29 @@ export interface SwervpayCheckoutConfig
     description?: string;
     customer?: SwervpayCustomer;
   };
-  onSuccess: Callback;
-  onClose: Callback;
+  onSuccess: ValueChanged;
+  onClose: VoidCallback;
+  onLoad: VoidCallback;
 }
 
 export interface SwervpayIdentityConfig
   extends Record<
     string,
-    string | number | MetaProps | Callback | boolean | undefined
+    | string
+    | number
+    | MetaProps
+    | VoidCallback
+    | ValueChanged
+    | boolean
+    | undefined
   > {
   key?: string;
   data?: {
     meta?: MetaProps;
   };
-  onSuccess: Callback;
-  onClose: Callback;
+  onSuccess: ValueChanged;
+  onClose: VoidCallback;
+  onLoad: VoidCallback;
 }
 
 export interface SwervpayProps {
