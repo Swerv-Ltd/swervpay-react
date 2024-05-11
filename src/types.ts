@@ -35,6 +35,7 @@ export interface SwervpayCheckoutConfig
     | undefined
   > {
   key?: string;
+  businessId?: string;
   checkoutId?: string;
   scope?: "deposit" | "collection" | "payment";
   sandbox: true | false;
@@ -43,6 +44,7 @@ export interface SwervpayCheckoutConfig
     meta?: MetaProps;
     currency?: string;
     description?: string;
+    reference?: string;
     customer?: SwervpayCustomer;
   };
   onSuccess: ValueChanged;
@@ -62,6 +64,7 @@ export interface SwervpayIdentityConfig
     | undefined
   > {
   key?: string;
+  businessId?: string;
   sandbox: true | false;
   data?: {
     meta?: MetaProps;
