@@ -6,7 +6,7 @@ type SwervpayCustomer = {
   firstname: string;
   lastname: string;
   email: string;
-  phone: string;
+  phone_number: string;
 };
 
 type NestedFuncs = {
@@ -41,7 +41,7 @@ export interface SwervpayCheckoutConfig
   sandbox: true | false;
   data?: {
     amount: string | number;
-    meta?: MetaProps;
+    metadata?: MetaProps;
     currency?: string;
     description?: string;
     reference?: string;
@@ -67,7 +67,7 @@ export interface SwervpayIdentityConfig
   businessId?: string;
   sandbox: true | false;
   data?: {
-    meta?: MetaProps;
+    metadata?: MetaProps;
   };
   onSuccess: ValueChanged;
   onClose: VoidCallback;

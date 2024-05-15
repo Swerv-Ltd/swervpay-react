@@ -1,6 +1,6 @@
 {
   "name": "@swervpaydev/react",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Official Swervpay Widget for React",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
